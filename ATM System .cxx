@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <iomanip>
 using namespace std;
 
 const string ClientFileName = "Clients1.txt";
@@ -279,7 +280,7 @@ void GoBackToAtmMenu()
 {
 	cout << "\n\nPress any kye to back :" << endl;
 	system("pause>0");
-	ShowAtmMenuScreen();
+	//ShowAtmMenuScreen();
 }
 void NormalWithdrawal(double Amount)
 {
@@ -355,7 +356,7 @@ void ShowTotalBalanceScreen()
 {
 	cout << "\n\n———————————————————————————————————————————————————————————————————\n";
 	cout << left;
-	cout << "\t\t" << setw(15) << "Total balance "
+	cout << "\t\t  " << setw(15) << "Total balance "
 		 << "|" << CurrentClient.Accountbalance;
 	cout << "\n———————————————————————————————————————————————————————————————————\n";
 }
@@ -416,7 +417,7 @@ void Login()
 	do
 	{
 		if (IsLoginFailed)
-			cout << "\nInvalid account number/pin code\n";
+		cout << "\nInvalid account number/pin code\n";
 
 		cout << "Enter account number :";
 		getline(cin >> ws, Accountnumber);
@@ -426,6 +427,8 @@ void Login()
 		IsLoginFailed = !CheckAndLoadClientInfo(Accountnumber, Pincode);
 
 	} while (IsLoginFailed);
+	
+	while(true)
 	ShowAtmMenuScreen();
 }
 int main()
