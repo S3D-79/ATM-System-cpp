@@ -280,7 +280,7 @@ void GoBackToAtmMenu()
 {
 	cout << "\n\nPress any kye to back :" << endl;
 	system("pause>0");
-	//ShowAtmMenuScreen();
+	ShowAtmMenuScreen();
 }
 void NormalWithdrawal(double Amount)
 {
@@ -428,7 +428,6 @@ void Login()
 
 	} while (IsLoginFailed);
 	
-	while(true)
 	ShowAtmMenuScreen();
 }
 int main()
